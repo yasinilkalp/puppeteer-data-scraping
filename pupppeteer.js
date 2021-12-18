@@ -8,12 +8,9 @@ const Schema = new mongoose.Schema({
   text: { type: String, unique: true, required: true },
 });
 
-const History = mongoose.model("History", Schema); 
+const History = mongoose.model("History", Schema);
 
-mongoose.connect(
-  "mongodb+srv://yasin:yasin123@today-in-history.wske3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority  ",
-  (err) => console.log(err ? err : "Mongo connected.")
-);
+mongoose.connect("", (err) => console.log(err ? err : "Mongo connected."));
 
 const monthNames = [
   "Ocak",
@@ -114,5 +111,4 @@ const monthNames = [
   await browser.close();
   console.clear();
   console.log("BİTTİ");
-
 })();
