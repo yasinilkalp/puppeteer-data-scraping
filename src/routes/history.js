@@ -4,6 +4,7 @@ var router = express.Router();
 var history = require("../models/history");
 
 router.get("/year/:year", function (req, res, next) {
+  console.log("history.js: get /year/:year");
   history
     .find({ year: req.params.year })
     .then((result) => {

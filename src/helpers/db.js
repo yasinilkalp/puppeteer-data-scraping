@@ -6,6 +6,8 @@ module.exports = () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+
+  console.log(process.env.Port);
   
   mongoose.connection.on("open", () => {
     console.log("MongoDB: Connected");

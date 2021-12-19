@@ -2,22 +2,24 @@
   "main": "index.js",
   "devDependencies": {
     "puppeteer": "2.1.1",
-    "puppeteer-core": "2.1.1"
+    "puppeteer-core": "2.1.1",
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "express": "^4.17.2",
-    "mongoose": "^6.1.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "mongoose": "^6.1.2",
+    "morgan": "~1.9.1",
+    "webpack": "^5.65.0"
   },
   "name": "puppeteer-data-scraping",
   "version": "1.0.0",
   "description": "Node.Js ve Puppeteer ile Data Scraping",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./src/bin/www"
   },
   "repository": {
     "type": "git",
