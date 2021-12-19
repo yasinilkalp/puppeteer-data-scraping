@@ -18,6 +18,9 @@
   "name": "puppeteer-data-scraping",
   "version": "1.0.0",
   "description": "Node.Js ve Puppeteer ile Data Scraping",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node ./src/bin/www"
   },
