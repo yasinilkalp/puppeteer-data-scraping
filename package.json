@@ -1,9 +1,40 @@
 {
+  "main": "index.js",
   "devDependencies": {
     "puppeteer": "2.1.1",
     "puppeteer-core": "2.1.1"
   },
   "dependencies": {
-    "mongoose": "^6.1.2"
-  }
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "name": "puppeteer-data-scraping",
+  "version": "1.0.0",
+  "description": "Node.Js ve Puppeteer ile Data Scraping",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasinilkalp/puppeteer-data-scraping.git"
+  },
+  "keywords": [
+    "nodejs",
+    "puppeteer",
+    "data",
+    "scraping",
+    "web",
+    "scraping"
+  ],
+  "author": "Yasin ilkalp Arabacı",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasinilkalp/puppeteer-data-scraping/issues"
+  },
+  "homepage": "https://github.com/yasinilkalp/puppeteer-data-scraping#readme"
 }

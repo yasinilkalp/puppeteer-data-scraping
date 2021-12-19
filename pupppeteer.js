@@ -1,16 +1,7 @@
 const puppeteer = require("puppeteer");
-const mongoose = require("mongoose");
 
-const Schema = new mongoose.Schema({
-  dateText: { type: String, unique: false, required: true },
-  year: { type: Number, unique: false, required: true },
-  typeName: { type: String, unique: false, required: true },
-  text: { type: String, unique: true, required: true },
-});
-
-const History = mongoose.model("History", Schema);
-
-mongoose.connect("", (err) => console.log(err ? err : "Mongo connected."));
+require("./helpers/db")();
+var history = require("./models/history");
 
 const monthNames = [
   "Ocak",
@@ -41,7 +32,7 @@ const monthNames = [
     d.setDate(d.getDate() + 1)
   ) {
     var date = new Date(d);
-    var url = date.getUTCDate() + "_" + monthNames[date.getMonth()];
+    var url = date.getDate() + "_" + monthNames[date.getMonth()];
     await page.goto(`https://tr.wikipedia.org/wiki/${url}#Olaylar`);
 
     try {
@@ -51,7 +42,7 @@ const monthNames = [
         const ulList = $("#Olaylar").parent().nextAll("ul");
         const dayAndMonth = $("#firstHeading").text().trim();
 
-        var title = "";
+        var title = "Olaylar";
         $.each(ulList, (index, value) => {
           const titleProp = $(value).prev();
           const h2 = $("span.mw-headline", titleProp).text();
@@ -95,20 +86,21 @@ const monthNames = [
         return data;
       }, {});
 
-      historyDataList.forEach((element) => {
-        const history = new History(element);
-        history.save();
-      });
+      
+      try {
+        await history.insertMany(historyDataList);
+      } catch (err) {
+        console.error(err);
+      }
 
-      console.log(url);
     } catch (e) {
-      console.log(e);
+      // console.log(e);
       await browser.close();
       break;
     }
   }
 
   await browser.close();
-  console.clear();
+  // console.clear();
   console.log("BİTTİ");
 })();
