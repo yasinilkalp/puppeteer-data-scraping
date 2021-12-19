@@ -1,14 +1,11 @@
 var mongoose = require("mongoose");
-require("dotenv").config();
-
+const url = "mongodb+srv://yasin:yasin123@today-in-history.wske3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 module.exports = () => {
-  mongoose.connect(process.env.MONGODB_URI, {
+  mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
 
-  console.log(process.env.Port);
-  
   mongoose.connection.on("open", () => {
     console.log("MongoDB: Connected");
   });
