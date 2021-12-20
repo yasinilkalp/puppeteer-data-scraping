@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 const url = "mongodb+srv://yasin:yasin123@today-in-history.wske3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
 module.exports = () => {
   mongoose.connect(url, {
     useNewUrlParser: true,

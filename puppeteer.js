@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-require("./helpers/db")();
+require("./db")();
 var history = require("./models/history");
 
 const monthNames = [
