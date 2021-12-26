@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-const url = "mongodb+srv://yasin:yasin123@today-in-history.wske3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const url = "mongodb://admin:password@localhost:27017/db";
 
 module.exports = () => {
   mongoose.connect(url, {
